@@ -1,0 +1,175 @@
+[
+  {
+    "name": "Construction of Borehole",
+    "budget": 5000000,
+    "location": {
+      "city": "Ikorodu",
+      "country": "Lagos"
+    },
+    "description": "The people of Ikorodu have long sought for a solution to the perennial water crisis plaguing the community. Help came when community members took action and decided to solve the problem",
+    "contractors": [
+      {
+        "avatar": "/images/contractors/contractor.png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (1).png"
+      }
+    ],
+    "image": "/images/projects/image.png",
+    "status": "Initiated",
+    "progress": 20
+  },
+  {
+    "name": "Renovation of Classrooms",
+    "budget": 500000,
+    "location": {
+      "city": "Benin City",
+      "country": "Edo"
+    },
+    "description": "Education remains the only sure way to guarantee the future of the next generation. This project is expected to change the poor educational facilities that have made it difficult for students",
+    "contractors": [
+      {
+        "avatar": "/images/contractors/contractor (2).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (3).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (4).png"
+      }
+    ],
+    "image": "/images/projects/image (1).png",
+    "status": "On track to be defaulted",
+    "progress": 0
+  },
+  {
+    "name": "Rebuilding the Tema Bridge",
+    "budget": 7000000,
+    "location": {
+      "city": "Gold Coast",
+      "country": "Ghana"
+    },
+    "description": "This project involves the rebuilding of the Tema bridge which was destroyed by erosion in 2014. Contractors submitted bids and went through a competitive series of steps before they were selected",
+    "contractors": [
+      {
+        "avatar": "/images/contractors/contractor (5).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (6).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (7).png"
+      }
+    ],
+    "image": "/images/projects/image (2).png",
+    "status": "Completed",
+    "progress": 100
+  },
+  {
+    "name": "Repair of Eroded Road",
+    "budget": 500000,
+    "location": {
+      "city": "Yenagoa",
+      "country": "Bayelsa"
+    },
+    "description": "This project will involve the repair of the Yenagoa road destroyed due to the impact of erosion. It will be done within the dry season of the year to ensure the work is not interrupted by the rains",
+    "contractors": [
+      {
+        "avatar": "/images/contractors/contractor (8).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (9).png"
+      }
+    ],
+    "image": "/images/projects/image (3).png",
+    "status": "Defaulted",
+    "progress": 2
+  },
+  {
+    "name": "Construction of Health Center",
+    "budget": 5500000,
+    "location": {
+      "city": "Jos",
+      "country": "Plateau"
+    },
+    "description": "This proposed health care facility will provide the much needed health care for the people of this community, and is expected to go a long way in solving the infant mortality problem",
+    "contractors": [
+      {
+        "avatar": "/images/contractors/contractor (10).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (11).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (12).png"
+      }
+    ],
+    "image": "/images/projects/image (4).png",
+    "status": "Not Initiated",
+    "progress": 0
+  },
+  {
+    "name": "Construction of Udala Road",
+    "budget": 1500000,
+    "location": {
+      "city": "Mile 2",
+      "country": "Nnewi"
+    },
+    "description": "The Udala road links seven commuities and is a major market route for buyers and sellers of farm produce. The project is aimed at making this road motorable to enhance trade and commerce in the area",
+    "contractors": [
+      {
+        "avatar": "/images/contractors/contractor (13).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (14).png"
+      }
+    ],
+    "image": "/images/projects/image (5).png",
+    "status": "Completed",
+    "progress": 100
+  },
+  {
+    "name": "Construction of Classroom",
+    "budget": 8000000,
+    "location": {
+      "city": "Sambisa",
+      "country": "Borno"
+    },
+    "description": "The Boko Haram scourge led to the destruction of this classroom which has now been fully rebuilt and equipped with state of the art facilities to aid the learning of students",
+    "contractors": [
+      {
+        "avatar": "/images/contractors/contractor (15).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (16).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (17).png"
+      }
+    ],
+    "image": "/images/projects/image (6).png",
+    "status": "Completed",
+    "progress": 100
+  },
+  {
+    "name": "Construction of Classroom",
+    "budget": 1000000,
+    "location": {
+      "city": "Minna",
+      "country": "Niger"
+    },
+    "description": "The Burna Bridge project will link eight communities and aid the inflow of essential goods and services to these areas. It is expected to be completed in the next two months",
+    "contractors": [
+      {
+        "avatar": "/images/contractors/contractor (18).png"
+      },
+      {
+        "avatar": "/images/contractors/contractor (19).png"
+      }
+    ],
+    "image": "/images/projects/image (7).png",
+    "status": "On track to be completed",
+    "progress": 80
+  }
+]
+
