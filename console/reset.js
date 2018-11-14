@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const projects = require('./data/projects');
 const {
     dbService,
