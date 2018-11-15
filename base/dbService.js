@@ -1,8 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-const {
-  connection,
-} = require('../db');
-
+const { connection } = require('../db');
 const models = require('../models');
 
 const NEGATIVE_RE = /^-/;
@@ -13,7 +10,7 @@ const defaultPagination = {
   offset: 0,
 };
 
-const getId = obj => obj._id;
+const getId = (obj) => obj._id;
 const normalizeSort = (sort) => {
   const direction = sort.startsWith('-') ? -1 : 1;
   const field = sort.replace(NEGATIVE_RE, '');

@@ -1,17 +1,9 @@
-const {
-  transformer,
-} = require('../../base');
+const { transformer } = require('../../base');
+const { curry } = require('../../base/utils');
 
-const {
-  curry,
-} = require('../../base/utils');
-
-const {
-  types,
-} = transformer;
-
+const { types } = transformer;
 const fields = {
-  sort: types.String,
+  sort: 'S',
   limit: types.Number,
   offset: types.Number,
 };

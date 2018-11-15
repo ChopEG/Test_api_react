@@ -6,21 +6,14 @@ class DataValidationError extends global.Error {
       return false;
     }
 
-    const [
-      value,
-    ] = Object.values(error);
+    const [value] = Object.values(error);
 
     return value instanceof ValidationError;
   }
 
   static getValidationError(error) {
-    const [
-      key,
-    ] = Object.keys(error);
-
-    const [
-      value,
-    ] = Object.values(error);
+    const [key] = Object.keys(error);
+    const [value] = Object.values(error);
 
     return {
       [key]: value.message,

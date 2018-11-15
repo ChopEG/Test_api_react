@@ -1,8 +1,5 @@
 const httpStatus = require('http-status');
-const {
-  DataValidationError,
-  NotFoundError,
-} = require('./errors');
+const { DataValidationError, NotFoundError } = require('./errors');
 
 class ErrorResponse {
   static get isDevelopment() {
@@ -16,12 +13,18 @@ class ErrorResponse {
 
     if (err instanceof DataValidationError) {
       this.statusCode = httpStatus.BAD_REQUEST;
-      this.errors = err.getErrors();
     } else if (err instanceof NotFoundError) {
       this.statusCode = httpStatus.NOT_FOUND;
     }
 
-    if (this.constructor.isDevelopment && err.getMetadata) {
+    if (typeof err.getErrors === 'function') {
+      this.errors = err.getErrors();
+    }
+
+    if (
+      this.constructor.isDevelopment &&
+      typeof err.getMetadata === 'function'
+    ) {
       this.metadata = err.getMetadata();
     }
   }

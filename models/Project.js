@@ -1,16 +1,8 @@
 const mongoose = require('mongoose');
-const {
-  toJSON,
-} = require('./utils/schema');
+const { toJSON } = require('./utils/schema');
 
-const {
-  Schema,
-} = mongoose;
-
-const {
-  Types,
-} = Schema;
-
+const { Schema } = mongoose;
+const { Types } = Schema;
 const ProjectSchema = new Schema({
   name: {
     type: String,
@@ -39,10 +31,12 @@ const ProjectSchema = new Schema({
     required: true,
   },
 
-  contractors: [{
-    type: Types.ObjectId,
-    ref: 'Contractor',
-  }],
+  contractors: [
+    {
+      type: Types.ObjectId,
+      ref: 'Contractor',
+    },
+  ],
 
   image: {
     type: String,

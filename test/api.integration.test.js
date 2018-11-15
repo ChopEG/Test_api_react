@@ -11,9 +11,7 @@ describe('API', () => {
 
   test('should return error response with status 404', async () => {
     const response = await agent.get(`/api`);
-    const {
-      statusCode,
-    } = response;
+    const { statusCode } = response;
 
     expect(statusCode).toBe(404);
   });
@@ -21,10 +19,7 @@ describe('API', () => {
   test('should return data with project', async () => {
     const limit = 1;
     const response = await agent.get(`/api/projects?limit=${limit}`);
-    const {
-      body,
-      statusCode,
-    } = response;
+    const { body, statusCode } = response;
 
     expect(statusCode).toBe(200);
 
@@ -37,16 +32,10 @@ describe('API', () => {
       }),
     );
 
-    const {
-      data,
-    } = body;
-
+    const { data } = body;
     expect(data.length).toBe(limit);
 
-    const [
-      project,
-    ] = data;
-
+    const [project] = data;
     expect(project).toEqual(
       expect.objectContaining({
         name: expect.any(String),

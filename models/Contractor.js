@@ -1,12 +1,7 @@
 const mongoose = require('mongoose');
-const {
-  toJSON,
-} = require('./utils/schema');
+const { toJSON } = require('./utils/schema');
 
-const {
-  Schema,
-} = mongoose;
-
+const { Schema } = mongoose;
 const ContractorSchema = new Schema({
   avatar: {
     type: String,

@@ -1,8 +1,16 @@
+const errorFactory = require('./errorFactory');
+const { curry } = require('./utils');
+
 const types = {
   String,
   Number,
   Boolean,
 };
+
+const createTransformationError = curry(
+  errorFactory.createTransformationError,
+  'Transformation error',
+);
 
 const toType = (type, data) => {
   switch (type) {
@@ -19,7 +27,14 @@ const toType = (type, data) => {
     }
 
     default: {
-      return data;
+      const error = new TypeError('Invalid type');
+      throw createTransformationError(
+        {
+          type,
+          data,
+        },
+        [error],
+      );
     }
   }
 };

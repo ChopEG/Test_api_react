@@ -2,13 +2,9 @@ require('./config');
 
 const http = require('http');
 const app = require('./app');
-const {
-  logger,
-} = require('./base');
+const { logger } = require('./base');
 
-const {
-  PORT,
-} = process.env;
+const { PORT } = process.env;
 
 const server = http.createServer(app);
 server.listen(PORT, (err) => {

@@ -5,10 +5,6 @@ class ValidationError extends global.Error {
     this.metadata = metadata;
   }
 
-  getErrors() {
-    return this.errors;
-  }
-
   getMessage() {
     return this.message;
   }
