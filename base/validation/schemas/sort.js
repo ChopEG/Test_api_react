@@ -1,21 +1,28 @@
 const {
-    validateString,
-    validateIn,
+  validateString,
+  validateIn,
 } = require('../validator');
 
-module.exports = (
-    {
-        sortFields,
-    }
-) => [
-    [
-        'Sort should be a string',
-        validateString,
-    ],
+const {
+  negotiate,
+} = require('../../utils');
 
+module.exports = (
+  {
+    sortFields,
+  },
+) => [
+  [
+    'Sort should be a string',
+    validateString,
+  ],
+
+  [
+    'Invalid name of sort param',
+    validateIn,
     [
-        'Invalid name of sort param',
-        validateIn,
-        sortFields,
+      ...sortFields,
+      ...sortFields.map(negotiate),
     ],
+  ],
 ];

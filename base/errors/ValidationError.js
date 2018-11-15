@@ -1,21 +1,21 @@
 class ValidationError extends global.Error {
-    constructor(message, metadata) {
-        super(message);
+  constructor(message, metadata) {
+    super(message);
 
-        this.metadata = metadata;
-    }
+    this.metadata = metadata;
+  }
 
-    getErrors() {
-        return this.errors;
-    }
+  getErrors() {
+    return this.errors;
+  }
 
-    getMessage() {
-        return this.message;
-    }
+  getMessage() {
+    return this.message;
+  }
 
-    getMetadata() {
-        return this.metadata;
-    }
+  getMetadata() {
+    return this.metadata;
+  }
 }
 
 module.exports = ValidationError;

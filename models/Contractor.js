@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 const {
-    toJSON,
+  toJSON,
 } = require('./utils/schema');
 
 const {
-    Schema,
+  Schema,
 } = mongoose;
 
 const ContractorSchema = new Schema({
-    avatar: {
-        type: String,
-        required: true,
-    },
+  avatar: {
+    type: String,
+    required: true,
+  },
 });
 
 ContractorSchema.set('toJSON', {
-    transform: toJSON,
+  transform: toJSON,
 });
 
 module.exports = mongoose.model('Contractor', ContractorSchema);

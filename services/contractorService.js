@@ -1,19 +1,19 @@
 const {
-    dbService,
+  dbService,
 } = require('../base');
 
 const {
-    curry,
+  curry,
 } = require('../base/utils');
 
 const DATA_TYPE = 'Contractor';
 const {
-    Contractor,
+  Contractor,
 } = dbService.models;
 
 const create = curry(dbService.create, Contractor);
 
 module.exports = {
-    DATA_TYPE,
-    create,
+  DATA_TYPE,
+  create,
 };

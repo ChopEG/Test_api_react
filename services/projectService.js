@@ -1,41 +1,41 @@
 const {
-    dbService,
+  dbService,
 } = require('../base');
 
 const {
-    curry,
+  curry,
 } = require('../base/utils');
 
 const DATA_TYPE = 'Project';
 const {
-    Project,
+  Project,
 } = dbService.models;
 
 const defaultSort = 'name';
 const {
-    limit: defaultLimit,
-    offset: defaultOffset,
+  limit: defaultLimit,
+  offset: defaultOffset,
 } = dbService.defaultPagination;
 
 const create = curry(dbService.create, Project);
 const findAll = (
-    {
-        sort = defaultSort,
-        pagination: {
-            limit = defaultLimit,
-            offset = defaultOffset,
-        },
+  {
+    sort = defaultSort,
+    pagination: {
+      limit = defaultLimit,
+      offset = defaultOffset,
     },
-    populate = ['contractors'],
+  },
+  populate = ['contractors'],
 ) => Project
-    .find()
-    .limit(limit)
-    .skip(offset)
-    .sort(dbService.normalizeSort(sort))
-    .populate(...populate);
+  .find()
+  .limit(limit)
+  .skip(offset)
+  .sort(dbService.normalizeSort(sort))
+  .populate(...populate);
 
 module.exports = {
-    DATA_TYPE,
-    create,
-    findAll,
+  DATA_TYPE,
+  create,
+  findAll,
 };

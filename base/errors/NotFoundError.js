@@ -1,13 +1,13 @@
 class NotFoundError extends global.Error {
-    constructor(message, metadata) {
-        super(message);
+  constructor(message, metadata) {
+    super(message);
 
-        this.metadata = metadata;
-    }
+    this.metadata = metadata;
+  }
 
-    getMetadata() {
-        return this.metadata;
-    }
+  getMetadata() {
+    return this.metadata;
+  }
 }
 
 module.exports = NotFoundError;

@@ -1,48 +1,48 @@
 const {
-    controller,
+  controller,
 } = require('../base');
 
 const {
-    listRequestValidator,
+  listRequestValidator,
 } = require('../validators/projects');
 
 const {
-    listRequestTransformer,
+  listRequestTransformer,
 } = require('../transformers/projects');
 
 const {
-    projectService,
+  projectService,
 } = require('../services');
 
 const list = async (req, res) => {
-    const requestData = await listRequestValidator.getData(req);
-    const {
+  const requestData = await listRequestValidator.getData(req);
+  const {
+    limit,
+    offset,
+    sort,
+  } = listRequestTransformer.transform(requestData);
+
+  const projects = await projectService.findAll({
+    sort,
+    pagination: {
+      limit,
+      offset,
+    },
+  });
+
+  res.send({
+    type: projectService.DATA_TYPE,
+    data: projects,
+    query: {
+      sort,
+      pagination: {
         limit,
         offset,
-        sort,
-    } = listRequestTransformer.transform(requestData);
-
-    const projects = await projectService.findAll({
-        sort,
-        pagination: {
-            limit,
-            offset,
-        },
-    });
-
-    res.send({
-        type: projectService.DATA_TYPE,
-        data: projects,
-        query: {
-            sort,
-            pagination: {
-                limit,
-                offset,
-            },
-        },
-    });
+      },
+    },
+  });
 };
 
 module.exports = {
-    list: controller.createHandler(list),
+  list: controller.createHandler(list),
 };

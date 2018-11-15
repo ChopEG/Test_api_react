@@ -1,19 +1,22 @@
 const mongoose = require('mongoose');
+const {
+  logger,
+} = require('../base');
 
 const {
-    DB_USER,
-    DB_PASSWORD,
-    DB_HOST,
-    DB_PORT,
-    DB_NAME,
+  DB_USER,
+  DB_PASSWORD,
+  DB_HOST,
+  DB_PORT,
+  DB_NAME,
 } = process.env;
 
 mongoose.Promise = global.Promise;
 
 mongoose.connect(`mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
-    useNewUrlParser: true,
+  useNewUrlParser: true,
 });
 
-mongoose.connection.on('error', err => console.error('[mongoose.connection]', err));
+mongoose.connection.on('error', err => logger.error('[mongoose.connection]', err));
 
 module.exports = mongoose.connection;

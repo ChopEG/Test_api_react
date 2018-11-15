@@ -1,67 +1,67 @@
 const mongoose = require('mongoose');
 const {
-    toJSON,
+  toJSON,
 } = require('./utils/schema');
 
 const {
-    Schema,
+  Schema,
 } = mongoose;
 
 const {
-    Types,
+  Types,
 } = Schema;
 
 const ProjectSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
+  name: {
+    type: String,
+    required: true,
+  },
+
+  budget: {
+    type: Number,
+    required: true,
+  },
+
+  location: {
+    city: {
+      type: String,
+      required: true,
     },
 
-    budget: {
-        type: Number,
-        required: true,
+    country: {
+      type: String,
+      required: true,
     },
+  },
 
-    location: {
-        city: {
-            type: String,
-            required: true,
-        },
+  description: {
+    type: String,
+    required: true,
+  },
 
-        country: {
-            type: String,
-            required: true,
-        },
-    },
+  contractors: [{
+    type: Types.ObjectId,
+    ref: 'Contractor',
+  }],
 
-    description: {
-        type: String,
-        required: true,
-    },
+  image: {
+    type: String,
+    required: true,
+  },
 
-    contractors: [{
-        type: Types.ObjectId,
-        ref: 'Contractor',
-    }],
+  status: {
+    type: String,
+    required: true,
+  },
 
-    image: {
-        type: String,
-        required: true,
-    },
-
-    status: {
-        type: String,
-        required: true,
-    },
-
-    progress: {
-        type: Number,
-        required: true,
-    },
+  progress: {
+    type: Number,
+    required: true,
+  },
 });
 
 ProjectSchema.set('toJSON', {
-    transform: toJSON,
+  transform: toJSON,
 });
 
 module.exports = mongoose.model('Project', ProjectSchema);

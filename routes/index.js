@@ -1,9 +1,10 @@
 const express = require('express');
-const router = express.Router();
 const apiRouter = require('./api');
 const {
-    mainController,
+  mainController,
 } = require('../controllers');
+
+const router = express.Router();
 
 router.use('/api', apiRouter);
 router.use('*', mainController.notFound);

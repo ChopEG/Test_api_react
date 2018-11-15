@@ -4,10 +4,13 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const cors = require('cors');
+const {
+  logger,
+} = require('./base');
 const router = require('./routes');
 
 const {
-    PORT,
+  PORT,
 } = process.env;
 
 const app = express();
@@ -17,9 +20,9 @@ app.use(router);
 
 const server = http.createServer(app);
 server.listen(PORT, (err) => {
-    if (err) {
-        console.error('Server listen failed', err);
-    }
+  if (err) {
+    logger.error('Server listen failed', err);
+  }
 
-    console.debug(`Server listening on port ${PORT}`);
+  logger.debug(`Server listening on port ${PORT}`);
 });

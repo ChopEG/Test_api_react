@@ -15,9 +15,7 @@ const {
 
 const sortFields = [
     'name',
-    '-name',
     'budget',
-    '-budget',
 ];
 
 const schema = {
