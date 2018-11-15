@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('./config');
 
 const http = require('http');
 const app = require('./app');
@@ -14,7 +14,7 @@ const server = http.createServer(app);
 server.listen(PORT, (err) => {
   if (err) {
     logger.error('Server listen failed', err);
+  } else {
+    logger.debug(`Server listening on port ${PORT}`);
   }
-
-  logger.debug(`Server listening on port ${PORT}`);
 });
