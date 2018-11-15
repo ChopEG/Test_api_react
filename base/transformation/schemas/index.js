@@ -1,11 +1,11 @@
 const limit = require('./limit');
-const offset = require('./offset');
+const skip = require('./skip');
 const sort = require('./sort');
 const rename = require('./rename');
 
 module.exports = {
   limit,
-  offset,
+  skip,
   sort,
   rename,
 };

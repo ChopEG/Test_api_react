@@ -75,7 +75,6 @@ const transformData = (schema, data) => {
     try {
       transformedData = getTransformedData(schema, data);
     } catch (e) {
-      e.setField('data');
       throw e;
     }
   } else {

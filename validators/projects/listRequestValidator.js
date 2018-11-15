@@ -1,17 +1,17 @@
 const { validator, errorFactory } = require('../../base');
 const { curry } = require('../../base/utils');
 const {
-  sort: sortSchema,
+  order: orderSchema,
   limit: limitSchema,
   offset: offsetSchema,
 } = require('../../base/validation/schemas');
 
-const sortFields = ['name', 'budget'];
+const orderFields = ['name', 'budget'];
 const schema = {
   limit: limitSchema(),
   offset: offsetSchema(),
-  sort: sortSchema({
-    sortFields,
+  order: orderSchema({
+    orderFields,
   }),
 };
 
@@ -23,7 +23,7 @@ const createDataValidationError = curry(
 const validateData = (req) => {
   const { query } = req;
   const data = {
-    sort: query.sort,
+    order: query.order,
     limit: query.limit,
     offset: query.offset,
   };

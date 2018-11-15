@@ -4,7 +4,7 @@ const schemas = require('../../base/transformation/schemas');
 
 const schema = {
   limit: schemas.limit(),
-  offset: schemas.offset(),
+  skip: schemas.skip(),
   sort: schemas.sort(),
 };
 

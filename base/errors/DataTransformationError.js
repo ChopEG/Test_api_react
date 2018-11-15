@@ -10,8 +10,14 @@ class DataTransformationError extends global.Error {
   }
 
   static getTransformationError(error) {
+    const field = error.getField();
+    const message = error.getMessage();
+    if (!field) {
+      return message;
+    }
+
     return {
-      [error.getField()]: error.getMessage(),
+      [field]: message,
     };
   }
 

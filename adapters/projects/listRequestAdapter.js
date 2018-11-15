@@ -4,8 +4,8 @@ const schemas = require('../../base/transformation/schemas');
 
 const schema = schemas.rename({
   limit: 'limit',
-  offset: 'offset',
-  sort: 'sort',
+  offset: 'skip',
+  order: 'sort',
 });
 
 const createDataTransformationError = curry(

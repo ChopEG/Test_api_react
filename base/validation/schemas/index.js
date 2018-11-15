@@ -1,9 +1,9 @@
 const limit = require('./limit');
 const offset = require('./offset');
-const sort = require('./sort');
+const order = require('./order');
 
 module.exports = {
   limit,
   offset,
-  sort,
+  order,
 };
