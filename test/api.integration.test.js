@@ -1,4 +1,4 @@
-const { URLSearchParams } = require('url');
+const querystring = require('querystring');
 const mongoose = require('mongoose');
 const supertest = require('supertest');
 const app = require('../app');
@@ -18,15 +18,14 @@ describe('API', () => {
   });
 
   test('should return data with project', async () => {
+    const url = '/api/projects';
     const params = {
       limit: 1,
+      offset: 1,
       sort: '-budget',
     };
 
-    const searchParams = new URLSearchParams(params);
-    const response = await agent.get(
-      `/api/projects?${searchParams.toString()}`,
-    );
+    const response = await agent.get(`${url}?${querystring.stringify(params)}`);
 
     const { body, statusCode } = response;
     expect(statusCode).toBe(200);
