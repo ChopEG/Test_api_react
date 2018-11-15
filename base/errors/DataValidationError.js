@@ -23,6 +23,7 @@ class DataValidationError extends global.Error {
   constructor(message, metadata, errors = []) {
     super(message);
 
+    this.name = this.constructor.name;
     this.metadata = metadata;
     this.errors = errors.filter(this.constructor.isValidationError);
   }

@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "reset": "node console/reset.js",
-    "lint": "eslint config.js app.js index.js base console controllers db models routes services transformers validators test",
+    "lint": "eslint .",
     "test": "jest --detectOpenHandles"
   },
   "author": "",
@@ -16,7 +17,7 @@
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "helmet": "^3.15.0",
-    "http-status": "^1.3.1",
+    "http-status-codes": "^1.3.0",
     "mongoose": "^5.3.11"
   },
   "devDependencies": {

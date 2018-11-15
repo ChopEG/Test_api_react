@@ -1,4 +1,4 @@
-const httpStatus = require('http-status');
+const httpStatus = require('http-status-codes');
 const { DataValidationError, NotFoundError } = require('./errors');
 
 class ErrorResponse {

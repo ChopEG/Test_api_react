@@ -1,9 +1,9 @@
 const logger = require('./logger');
 const dbService = require('./dbService');
 const controller = require('./controller');
-const transformer = require('./transformer');
 const errorFactory = require('./errorFactory');
 const { validator } = require('./validation');
+const { transformer } = require('./transformation');
 
 module.exports = {
   logger,

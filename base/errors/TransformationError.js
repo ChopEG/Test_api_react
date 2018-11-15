@@ -1,13 +1,10 @@
 class TransformationError extends global.Error {
-  static getMessage(error) {
-    return error.message;
-  }
-
-  constructor(message, metadata, errors) {
+  constructor(message, metadata, field) {
     super(message);
 
+    this.name = this.constructor.name;
     this.metadata = metadata;
-    this.errors = errors;
+    this.field = field;
   }
 
   getMessage() {
@@ -18,8 +15,12 @@ class TransformationError extends global.Error {
     return this.metadata;
   }
 
-  getErrors() {
-    return this.errors.map(this.constructor.getMessage);
+  getField() {
+    return this.field;
+  }
+
+  setField(value) {
+    this.field = value;
   }
 }
 

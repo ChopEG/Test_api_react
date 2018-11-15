@@ -1,12 +1,10 @@
 const { validator, errorFactory } = require('../../base');
-
+const { curry } = require('../../base/utils');
 const {
   sort: sortSchema,
   limit: limitSchema,
   offset: offsetSchema,
 } = require('../../base/validation/schemas');
-
-const { curry } = require('../../base/utils');
 
 const sortFields = ['name', 'budget'];
 const schema = {
@@ -22,7 +20,7 @@ const createDataValidationError = curry(
   'List request validation error',
 );
 
-const getData = (req) => {
+const validateData = (req) => {
   const { query } = req;
   const data = {
     sort: query.sort,
@@ -46,5 +44,5 @@ const getData = (req) => {
 };
 
 module.exports = {
-  getData,
+  validateData,
 };

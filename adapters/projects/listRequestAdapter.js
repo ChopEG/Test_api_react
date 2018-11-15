@@ -2,15 +2,15 @@ const { transformer, errorFactory } = require('../../base');
 const { curry } = require('../../base/utils');
 const schemas = require('../../base/transformation/schemas');
 
-const schema = {
-  limit: schemas.limit(),
-  offset: schemas.offset(),
-  sort: schemas.sort(),
-};
+const schema = schemas.rename({
+  limit: 'limit',
+  offset: 'offset',
+  sort: 'sort',
+});
 
 const createDataTransformationError = curry(
   errorFactory.createDataTransformationError,
-  'List request transformation error',
+  'List request adapter error',
 );
 
 const transformData = (data) => {

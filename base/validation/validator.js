@@ -32,7 +32,6 @@ const validateData = (schema, data) =>
     const validators = schema[field];
     for (let i = 0; i < validators.length; i += 1) {
       const [message, validate, ...params] = validators[i];
-
       const validator = createValidator(message, validate);
       const error = validator(data[field], ...params);
       if (error) {
