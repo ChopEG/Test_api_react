@@ -1,3 +1,4 @@
+const { URLSearchParams } = require('url');
 const mongoose = require('mongoose');
 const supertest = require('supertest');
 const app = require('../app');
@@ -17,10 +18,17 @@ describe('API', () => {
   });
 
   test('should return data with project', async () => {
-    const limit = 1;
-    const response = await agent.get(`/api/projects?limit=${limit}`);
-    const { body, statusCode } = response;
+    const params = {
+      limit: 1,
+      sort: '-budget',
+    };
 
+    const searchParams = new URLSearchParams(params);
+    const response = await agent.get(
+      `/api/projects?${searchParams.toString()}`,
+    );
+
+    const { body, statusCode } = response;
     expect(statusCode).toBe(200);
 
     const dataType = 'Project';
@@ -33,7 +41,7 @@ describe('API', () => {
     );
 
     const { data } = body;
-    expect(data.length).toBe(limit);
+    expect(data.length).toBe(params.limit);
 
     const [project] = data;
     expect(project).toEqual(

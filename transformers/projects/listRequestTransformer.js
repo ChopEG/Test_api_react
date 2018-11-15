@@ -3,7 +3,7 @@ const { curry } = require('../../base/utils');
 
 const { types } = transformer;
 const fields = {
-  sort: 'S',
+  sort: types.String,
   limit: types.Number,
   offset: types.Number,
 };
