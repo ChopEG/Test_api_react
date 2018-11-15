@@ -28,6 +28,7 @@ const toType = (type, data) => {
 
     default: {
       const error = new TypeError('Invalid type');
+
       throw createTransformationError(
         {
           type,

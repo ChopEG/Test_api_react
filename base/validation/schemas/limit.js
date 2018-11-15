@@ -1,9 +1,7 @@
-const {
-  validateInt,
-  validateRange,
-  PAGINATION_LIMIT_MIN,
-  PAGINATION_LIMIT_MAX,
-} = require('../validator');
+const { validateInt, validateRange } = require('../validator');
+
+const PAGINATION_LIMIT_MIN = 1;
+const PAGINATION_LIMIT_MAX = 100;
 
 module.exports = ({
   min = PAGINATION_LIMIT_MIN,

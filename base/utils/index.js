@@ -1,7 +1,7 @@
 const curry = (fn, ...args) => (...rest) => fn(...args, ...rest);
-const negotiate = (str) => `-${str}`;
+const negate = (str) => `-${str}`;
 
 module.exports = {
   curry,
-  negotiate,
+  negate,
 };

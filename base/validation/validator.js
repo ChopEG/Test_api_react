@@ -1,10 +1,5 @@
 const errorFactory = require('../errorFactory');
 
-const PAGINATION_LIMIT_MIN = 1;
-const PAGINATION_LIMIT_MAX = 100;
-const PAGINATION_OFFSET_MIN = 0;
-const PAGINATION_OFFSET_MAX = Number.MAX_SAFE_INTEGER;
-
 const validateInt = (num) => {
   const int = parseInt(num, 10);
   return !Number.isNaN(int);
@@ -53,10 +48,6 @@ const validateData = (schema, data) =>
   });
 
 module.exports = {
-  PAGINATION_LIMIT_MIN,
-  PAGINATION_LIMIT_MAX,
-  PAGINATION_OFFSET_MIN,
-  PAGINATION_OFFSET_MAX,
   validateData,
   validateInt,
   validateString,
