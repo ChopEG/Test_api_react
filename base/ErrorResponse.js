@@ -1,3 +1,4 @@
+const httpStatus = require('http-status');
 const {
   DataValidationError,
   NotFoundError,
@@ -9,15 +10,15 @@ class ErrorResponse {
   }
 
   constructor(err) {
-    this.statusCode = 500;
+    this.statusCode = httpStatus.INTERNAL_SERVER_ERROR;
     this.status = 'error';
     this.message = err.message;
 
     if (err instanceof DataValidationError) {
-      this.statusCode = 400;
+      this.statusCode = httpStatus.BAD_REQUEST;
       this.errors = err.getErrors();
     } else if (err instanceof NotFoundError) {
-      this.statusCode = 404;
+      this.statusCode = httpStatus.NOT_FOUND;
     }
 
     if (this.constructor.isDevelopment && err.getMetadata) {
