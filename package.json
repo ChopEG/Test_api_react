@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon index.js",
     "reset": "node console/reset.js",
-    "lint": "eslint index.js base console controllers db models routes services transformers validators",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint app.js index.js base console controllers db models routes services transformers validators",
+    "test": "jest --detectOpenHandles"
   },
   "author": "",
   "license": "ISC",
@@ -24,8 +24,11 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.0.0",
     "eslint-plugin-prettier": "^3.0.0",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.6",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "supertest": "^3.3.0"
   }
 }

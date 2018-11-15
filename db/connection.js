@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-const {
-  logger,
-} = require('../base');
+const logger = require('../base/logger');
 
 const {
   DB_USER,
