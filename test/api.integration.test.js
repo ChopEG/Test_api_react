@@ -35,7 +35,7 @@ describe('API', () => {
       expect.objectContaining({
         type: dataType,
         data: expect.any(Array),
-        query: expect.any(Object),
+        metadata: expect.any(Object),
       }),
     );
 
